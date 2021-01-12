@@ -1,15 +1,14 @@
 Name:    fontconfig-font-replacements
 Version: 0.6
-Release: 2%{?dist}
-Summary: Font replacement rules for popular proprietary fonts.
+Release: 3%{?dist}
+Summary: Font replacement rules for popular proprietary fonts
 
 Group:   System Environment/Libraries
 License: MIT
-URL:     https://github.com/silenc3r/fedora-better-fonts
-Source0: 36-repl-liberation-fonts.conf
-Source1: 37-repl-global-free.conf
-Source2: 52-latin-free.conf
-Source3: 66-aliases-wine-free.conf
+URL:     https://github.com/ramottamado/fedora-better-fonts
+Source0: 37-repl-global-free.conf
+Source1: 52-latin-free.conf
+Source2: 66-aliases-wine-free.conf
 
 BuildArch:     noarch
 BuildRequires: fontpackages-devel
@@ -38,6 +37,7 @@ Requires:      open-sans-fonts
 Requires:      passion-one-fonts
 Requires:      sorkintype-merriweather-fonts
 Requires:      sorkintype-merriweather-sans-fonts
+Requires:      urw-base35-nimbus-sans-fonts
 
 %description
 Font replacement rules for popular proprietary fonts. This includes
@@ -54,18 +54,14 @@ install -m 0755 -d %{buildroot}%{_fontconfig_templatedir} \
                    %{buildroot}%{_fontconfig_confdir}
 
 install -m 0644 -p %{SOURCE0} \
-        %{buildroot}%{_fontconfig_templatedir}/36-repl-liberation-fonts.conf
-ln -s %{_fontconfig_templatedir}/36-repl-liberation-fonts.conf \
-      %{buildroot}%{_fontconfig_confdir}/36-repl-liberation-fonts.conf
-install -m 0644 -p %{SOURCE1} \
         %{buildroot}%{_fontconfig_templatedir}/37-repl-global-free.conf
 ln -s %{_fontconfig_templatedir}/37-repl-global-free.conf \
       %{buildroot}%{_fontconfig_confdir}/37-repl-global-free.conf
-install -m 0644 -p %{SOURCE2} \
+install -m 0644 -p %{SOURCE1} \
         %{buildroot}%{_fontconfig_templatedir}/52-latin-free.conf
 ln -s %{_fontconfig_templatedir}/52-latin-free.conf \
       %{buildroot}%{_fontconfig_confdir}/52-latin-free.conf
-install -m 0644 -p %{SOURCE3} \
+install -m 0644 -p %{SOURCE2} \
         %{buildroot}%{_fontconfig_templatedir}/66-aliases-wine-free.conf
 ln -s %{_fontconfig_templatedir}/66-aliases-wine-free.conf \
       %{buildroot}%{_fontconfig_confdir}/66-aliases-wine-free.conf
@@ -75,6 +71,10 @@ ln -s %{_fontconfig_templatedir}/66-aliases-wine-free.conf \
 %{_fontconfig_templatedir}/*
 
 %changelog
+* Tue Jan 12 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-3
+- Fix fontconfig wrong fonts mapping
+- Delete liberation fonts mapping
+
 * Mon Nov 02 2020 Dawid Zych <dawid.zych@yandex.com> - 0.6-2
 - Add Open Sans as requirement
 

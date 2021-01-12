@@ -24,7 +24,7 @@ COPR repository: https://copr.fedorainfracloud.org/coprs/dawid/better_fonts/
 ## Installation instructons
 
 1. Enable COPR repository:  
-    `sudo dnf copr enable dawid/better_fonts -y`  
+    `sudo dnf copr enable ramot/better_fonts -y`  
 2. Install packages:  
     `sudo dnf install fontconfig-font-replacements -y`  
 3. (Optional) Enable subpixel (rgb) antialiasing:  
