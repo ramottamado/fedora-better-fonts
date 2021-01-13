@@ -1,6 +1,6 @@
 Name:    fontconfig-font-replacements
 Version: 0.6
-Release: 4%{?dist}
+Release: 5%{?dist}
 Summary: Font replacement rules for popular proprietary fonts
 
 Group:   System Environment/Libraries
@@ -13,6 +13,7 @@ Source2: 66-aliases-wine-free.conf
 BuildArch:     noarch
 BuildRequires: fontpackages-devel
 Requires:      adobe-source-code-pro-fonts
+Requires:      adobe-source-sans-pro-fonts
 Requires:      archivo-black-fonts
 Requires:      catharsis-cormorant-garamond-fonts
 Requires:      courier-prime-fonts
@@ -71,6 +72,9 @@ ln -s %{_fontconfig_templatedir}/66-aliases-wine-free.conf \
 %{_fontconfig_templatedir}/*
 
 %changelog
+* Wed Jan 13 12:29:05 WIB 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-5
+- Change fallback fonts
+
 * Tue Jan 12 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-4
 - Fix wrong fontconfig mapping
 
