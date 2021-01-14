@@ -1,6 +1,6 @@
 Name:    fontconfig-font-replacements
 Version: 0.6
-Release: 5%{?dist}
+Release: 6%{?dist}
 Summary: Font replacement rules for popular proprietary fonts
 
 Group:   System Environment/Libraries
@@ -29,6 +29,7 @@ Requires:      google-noto-serif-fonts
 Requires:      google-roboto-fonts
 Requires:      komika-text-fonts
 Requires:      lato-fonts
+Requires:      liberation-narrow-fonts
 Requires:      libre-baskerville-fonts
 Requires:      libreoffice-opensymbol-fonts
 Requires:      linux-libertine-biolinum-fonts
@@ -72,6 +73,9 @@ ln -s %{_fontconfig_templatedir}/66-aliases-wine-free.conf \
 %{_fontconfig_templatedir}/*
 
 %changelog
+* Thu Jan 14 11:17:28 WIB 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-6
+- Add required dependencies
+
 * Wed Jan 13 12:29:05 WIB 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-5
 - Change fallback fonts
 
