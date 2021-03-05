@@ -1,6 +1,6 @@
 Name:    fontconfig-font-replacements
 Version: 0.6
-Release: 6%{?dist}
+Release: 7%{?dist}
 Summary: Font replacement rules for popular proprietary fonts
 
 Group:   System Environment/Libraries
@@ -73,6 +73,9 @@ ln -s %{_fontconfig_templatedir}/66-aliases-wine-free.conf \
 %{_fontconfig_templatedir}/*
 
 %changelog
+* Fri Mar 05 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-7
+- Change fallback fonts for sans
+
 * Thu Jan 14 11:17:28 WIB 2021 Tamado Sitohang <ramot@ramottamado.dev> - 0.6-6
 - Add required dependencies
 
